@@ -4,6 +4,8 @@ import { RiCalendarScheduleFill } from "react-icons/ri";
 import { GoPersonFill } from "react-icons/go";
 import { MdStickyNote2 } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
+import { Link } from 'react-router-dom';
+
 
 // Function to get initials
 const getInitials = (username) => {
@@ -72,7 +74,7 @@ const DashBoard = () => {
                     <div className='flex items-center justify-center'>
                         <span className='mr-2 text-gray-400 text-[14px]'>Add new user</span>
                         <button className='flex mr-[20px] cursor-pointer lg:mr-[60px] rounded-full text-zinc-900 p-2 bg-emerald-400'>
-                            <CiCirclePlus size={20} />
+                            <Link to='/client form'><CiCirclePlus size={20} /></Link>
                         </button>
                     </div>
                 </div>
@@ -98,7 +100,7 @@ const DashBoard = () => {
                                     }`}
                                 >
                                     <td className="px-4 py-2 text-[10px] flex items-center gap-2">
-                                        <div className="w-7 h-7 flex items-center justify-center rounded-full bg-emerald-400 text-black text-[11px] font-bold">
+                                        <div className="w-7 h-7 flex items-center justify-center rounded-full bg-lime-300 text-black text-[11px] font-bold">
                                             {getInitials(client.username)}
                                         </div>
                                         {client.username}
