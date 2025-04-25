@@ -3,6 +3,8 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
+import { Link } from 'react-router-dom';
+
 
 
 const Home = () => {
@@ -87,14 +89,15 @@ const Home = () => {
 
             {/* Button */}
             <div className='w-full mt-4'>
-              <button className='bg-emerald-400 font-bold text-[11px] p-2.5 w-full rounded-sm'>
+              <button className='bg-emerald-400 cursor-pointer font-bold text-[11px] p-2.5 w-full rounded-sm'>
                 Sign in ......
               </button>
+              <p className='flex text-[11px] text-gray-400 mt-4 justify-center lg:justify-start'>Don't have an account ? <Link className='ml-2 cursor-pointer' to='/sign up'>Create account</Link></p>
             </div>
           </form>
 
           {/* Copyright */}
-          <div className='flex w-full justify-center lg:justify-start items-center mt-[60px]'>
+          <div className='flex w-full justify-center lg:justify-start items-center mt-[45px]'>
             <p className='text-[9px] hidden lg:flex text-gray-400'>
               &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
             </p>
