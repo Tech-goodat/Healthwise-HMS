@@ -1,10 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 
+
 const Home = () => {
+    const [data, setData] = useState({
+        
+        email: '',
+        password: ''
+    })
+
+    const handleInputChange =(e)=>{
+        const {name, value} = e.target
+        setData({...data, [name]: value})
+
+    }
+    const handleLogin=(e)=>{
+        e.preventDefault()
+        fetch('http://127.0.0.1:5555/doc_login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            alert('Sign in Successfull')
+        })
+        .catch(err=>console.log(err))
+    }
+
   return (
     <div className='w-full max-w-screen overflow-x-hidden'>
       <div className='flex flex-col items-center justify-center min-h-screen w-full lg:grid lg:grid-cols-2 lg:gap-5'>
@@ -27,14 +56,14 @@ const Home = () => {
           </div>
 
           {/* Form */}
-          <form className='flex w-full max-w-[350px] flex-col gap-4 mt-[30px]'>
+          <form onSubmit={handleLogin} className='flex w-full max-w-[350px] flex-col gap-4 mt-[30px]'>
             
             {/* Email */}
             <label htmlFor='email' className='flex flex-col w-full'>
               <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Your email address</span>
               <div className='bg-zinc-800 p-2.5 text-[11px] flex items-center rounded-sm'>
                 <MdOutlineEmail className='text-gray-400' size={15} />
-                <input type='text' className='ml-2 outline-none bg-transparent text-white w-full' placeholder='example@gmail.com' />
+                <input type='text' name='email' value={data.email} onChange={handleInputChange} className='ml-2 outline-none bg-transparent text-white w-full' placeholder='example@gmail.com' />
               </div>
             </label>
 
@@ -43,7 +72,7 @@ const Home = () => {
               <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Enter your username</span>
               <div className='bg-zinc-800 p-2.5 text-[11px] flex items-center rounded-sm'>
                 <FaUserCheck className='text-gray-400' size={15} />
-                <input type='text' className='ml-2 outline-none bg-transparent text-white w-full' placeholder='eg Felix Kiprotich' />
+                <input type='text' name='username' /*value={data.username} onChange={handleInputChange}*/ className='ml-2 outline-none bg-transparent text-white w-full' placeholder='eg Felix Kiprotich' />
               </div>
             </label>
 
@@ -52,7 +81,7 @@ const Home = () => {
               <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Enter your password</span>
               <div className='bg-zinc-800 p-2.5 text-[11px] flex items-center rounded-sm'>
                 <TbLockPassword className='text-gray-400' size={15} />
-                <input type='password' className='ml-2 outline-none bg-transparent text-white w-full' placeholder='..................' />
+                <input type='password' name='password' value={data.password} onChange={handleInputChange} className='ml-2 outline-none bg-transparent text-white w-full' placeholder='..................' />
               </div>
             </label>
 
@@ -73,7 +102,7 @@ const Home = () => {
         </div>
 
         {/* Right Section */}
-        <div className='flex flex-col rounded-lg  lg:mt-0 bg-indigo-50 h-full lg:h-screen justify-center items-center p-4'>
+        <div className='flex flex-col rounded-lg  lg:mt-0 bg-indigo-50 lg:h-screen h-full justify-center items-center p-4'>
           <DotLottieReact
           className='w-100% lg:w-[850px] max-w-500px h-auto object-cover'
             src="https://lottie.host/00a8ab11-c159-49c4-b6c5-0bd614de820f/omqsv0Wi5B.lottie"
