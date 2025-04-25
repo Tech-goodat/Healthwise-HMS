@@ -3,11 +3,13 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 
 const Home = () => {
+    const navigate=useNavigate()
     const [data, setData] = useState({
         
         email: '',
@@ -32,6 +34,8 @@ const Home = () => {
         .then(data=>{
             console.log(data)
             alert('Sign in Successfull')
+            sessionStorage.setItem('username', data.username)
+            navigate('/dashboard')
         })
         .catch(err=>console.log(err))
     }
@@ -51,7 +55,7 @@ const Home = () => {
 
           {/* Greeting */}
           <div className='flex w-full flex-col gap-2 items-center mt-[30px] lg:items-start'>
-            <h1 className='text-[23px] lg:text-[18px] font-bold text-center lg:text-left w-full'>Hello there,.....</h1>
+            <h1 className='text-[23px] lg:text-[18px] font-bold text-center lg:text-left w-full'>Hello there,.....👋</h1>
             <p className='text-[13px] lg:text-[10px] text-gray-400 text-center lg:text-left w-full'>
               Sign in to get access to your account
             </p>
