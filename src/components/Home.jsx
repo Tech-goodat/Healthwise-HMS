@@ -8,7 +8,7 @@ import { TbLockPassword } from "react-icons/tb";
 const Home = () => {
 
   return (
-    <div className='flex flex-col items-center justify-center h-full w-full lg:grid lg:grid-cols-2 lg:gap-5'>
+    <div className='flex flex-col items-center justify-center h-full lg:h-screen w-full lg:grid lg:grid-cols-2 lg:gap-5'>
        <div className='flex w-full  lg:ml-[100px]  flex-col items-center h-full'>
             <div className='flex justify-center lg:justify-start w-full  mt-[40px] items-center'>
                 <img src='/betterlogo.png' alt='logo' className='w-[30px] h-auto'/>
@@ -42,17 +42,19 @@ const Home = () => {
                 </div>
             </label>
             <div className='flex  w-full   flex-col mt-4'>
-            <button className='bg-emerald-400 flex justify-center font-bold items-center w-full  lg:w-[350px] mx-3 text-[11px] p-2.5 lg:p-2 flex lg:-mx-0  rounded-sm '>Sign in ......</button>
+            <button className='bg-emerald-400 flex justify-center font-bold items-center w-[335px]  lg:w-[350px] mx-3 text-[11px] p-2.5 lg:p-2 flex lg:-mx-0  rounded-sm '>Sign in ......</button>
             </div>
         </form>
 
+        <div className='flex w-full lg:justify-start justify-center items-center mt-[60px]'><p className='text-[9px] text-gray-400'>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
+
         </div>
-        <div className='flex flex-col items-center'>
+        <div className='flex rounded-lg bg-indigo-50 h-full lg:h-screen justify-center flex-col items-center'>
         <DotLottieReact
       src="https://lottie.host/00a8ab11-c159-49c4-b6c5-0bd614de820f/omqsv0Wi5B.lottie"
       loop
       autoplay
-      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      style={{ width: "900px", height: "auto", objectFit: "cover" }}
     />
     </div>
       
