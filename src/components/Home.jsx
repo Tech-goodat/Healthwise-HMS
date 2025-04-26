@@ -21,6 +21,13 @@ const Home = () => {
         setData({...data, [name]: value})
 
     }
+    useEffect(() => {
+        const token = sessionStorage.getItem('token')
+        if (token) {
+          navigate('/dashboard')
+        }
+      }, [navigate])
+      
     const handleLogin=(e)=>{
         e.preventDefault()
         fetch('https://healthwise-5j1x.onrender.com/doc_login', {
@@ -36,6 +43,7 @@ const Home = () => {
             alert('Sign in Successfull')
             sessionStorage.setItem('username', data.username)
             navigate('/dashboard')
+            sessionStorage.setItem('token', data.access_token)
         })
         .catch(err=>console.log(err))
     }
