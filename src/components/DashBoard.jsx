@@ -21,7 +21,7 @@ const DashBoard = () => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        fetch('http://127.0.0.1:5555/clients')
+        fetch('https://healthwise-5j1x.onrender.com/clients')
             .then((response) => response.json())
             .then((data) => setData(data))
             .catch((error) => console.log(error));
@@ -39,7 +39,7 @@ const DashBoard = () => {
             return;
         }
 
-        fetch(`http://127.0.0.1:5555/client_search/${term}`)
+        fetch(`https://healthwise-5j1x.onrender.com/client_search/${term}`)
             .then((response) => response.json())
             .then((data) => setSearchResults(data))
             .catch((error) => console.log(error));

@@ -23,7 +23,7 @@ const Home = () => {
     }
     const handleLogin=(e)=>{
         e.preventDefault()
-        fetch('http://127.0.0.1:5555/doc_login', {
+        fetch('https://healthwise-5j1x.onrender.com/doc_login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
