@@ -21,7 +21,16 @@ const DashBoard = () => {
     const [searchResults, setSearchResults] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = sessionStorage.getItem('token');
     
+        if (!token) {
+            navigate('/');  // 👈 Redirect to login if no token
+            return; // Stop further execution
+        }
+    }
+    )
     useEffect(() => {
         fetch('https://healthwise-5j1x.onrender.com/clients')
             .then((response) => response.json())

@@ -50,7 +50,6 @@ const ClientSignUpForm = () => {
                 .then(data=>{
                     console.log(data)
                     alert('Account created successfully !')
-                    sessionStorage.setItem('username', data.username)
                     navigate('/dashboard')
                 })
                 .catch(err=>console.log(err))

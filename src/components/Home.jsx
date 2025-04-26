@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import { Link, useNavigate } from 'react-router-dom';
+
 
 
 
@@ -26,7 +27,7 @@ const Home = () => {
         if (token) {
           navigate('/dashboard')
         }
-      }, [navigate])
+      }, [])
       
     const handleLogin=(e)=>{
         e.preventDefault()

@@ -40,6 +40,7 @@ const SignUp = () => {
             .then(data=>{
                 console.log(data)
                 alert('Account created successfully !')
+                sessionStorage.setItem('token', data.access_token)
                 sessionStorage.setItem('username', data.username)
                 navigate('/dashboard')
             })
