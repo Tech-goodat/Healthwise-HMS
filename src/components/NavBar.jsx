@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const NavBar = () => {
+    const Navigate = useNavigate();
     const user = sessionStorage.getItem('username');
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleLogout = () => {
         sessionStorage.clear();
-        window.location.reload();
+        Navigate('/');
     };
 
     const toggleMenu = () => {
