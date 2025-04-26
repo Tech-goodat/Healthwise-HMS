@@ -4,6 +4,7 @@ import Home from './Home'
 import SignUp from './SignUp'
 import DashBoard from './DashBoard'
 import ClientSignUpForm from './ClientSignUpForm'
+import UserModal from './UserModal'
 const App = () => {
   return (
    <Router>
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/sign up" element={<SignUp />} />
         <Route path="/dashboard" element={<DashBoard />} />
         <Route path="/client form" element={<ClientSignUpForm />} />
+        <Route path="/usermodal/:id" element={<UserModal />} />
         
       </Routes>
       </div>

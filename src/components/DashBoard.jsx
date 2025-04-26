@@ -6,7 +6,9 @@ import { MdStickyNote2 } from "react-icons/md";
 import { CiCirclePlus, CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from 'react-router-dom';
 
+
 // Function to get initials
+
 const getInitials = (username) => {
     if (!username) return "";
     const names = username.split(" ");
@@ -41,13 +43,16 @@ const DashBoard = () => {
 
         fetch(`https://healthwise-5j1x.onrender.com/client_search/${term}`)
             .then((response) => response.json())
-            .then((data) => setSearchResults(data))
+            .then((data) =>{
+                 setSearchResults(data)
+                
+                })
             .catch((error) => console.log(error));
     };
 
     // function to handle clicking on a search result
     const handleUserClick = (id) => {
-        navigate(`/client/${id}`);
+        navigate(`/usermodal/${id}`)
     };
 
     return (
