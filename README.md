@@ -1,12 +1,124 @@
-# React + Vite
+Of course! Here's the updated version of your `README.md` including your **deployment link**:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# Healthwise Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Welcome to the **Healthwise Frontend** project!  
+This is a responsive web application built with **React.js** and **TailwindCSS**, allowing healthcare providers to manage client data, programs, and services efficiently.
 
-## Expanding the ESLint configuration
+🔗 **Live Demo:**  
+[https://main.d2crs00234wk9u.amplifyapp.com/](https://main.d2crs00234wk9u.amplifyapp.com/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+- User authentication with session management
+- Dashboard overview of key statistics (clients, programs, enrollments)
+- Live client search with dynamic results
+- Add new clients through a user-friendly form
+- Remove clients directly from the dashboard
+- Responsive design optimized for desktop and mobile
+- Smooth navigation across pages
+
+---
+
+## 🛠 Tech Stack
+
+- **React.js** — Frontend library
+- **TailwindCSS** — Utility-first CSS framework
+- **React Router** — Client-side routing
+- **Vite** — Development server and build tool
+- **Heroicons / React Icons** — For clean, scalable icons
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── DashBoard.jsx
+│   ├── NavBar.jsx
+│   └── (Other UI Components)
+│
+├── pages/
+│   ├── Login.jsx
+│   ├── SignUp.jsx
+│   ├── ClientForm.jsx
+│   └── UserModal.jsx
+│
+├── App.jsx
+├── main.jsx
+└── assets/
+```
+
+---
+
+## 📜 Installation and Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/healthwise-frontend.git
+   cd healthwise-frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   Visit `http://localhost:5173` to view the app.
+
+---
+
+## 📡 Backend API
+
+This frontend connects to a backend Flask server hosted at:
+
+```
+https://healthwise-5j1x.onrender.com/
+```
+
+All data (clients, search, delete, add) are fetched and updated through secure API calls.
+
+---
+
+## 🖌️ UI Highlights
+
+- Gradient backgrounds for key metric cards
+- Interactive table with client data and quick actions
+- Search modal with real-time suggestions
+- Clean, minimalist dashboard for better user experience
+
+---
+
+## ✨ Future Improvements
+
+- Add client edit functionality
+- Implement pagination for client list
+- Add client profile photos
+- Role-based access (Admin, Doctor, Receptionist)
+- Notifications and alerts for operations
+
+---
+
+## 🧑‍💻 Author
+
+- **Felix Kiprotich Cheruiyot**
+
+---
+
+## 📃 License
+
+This project is licensed under the MIT License.
+
+!
