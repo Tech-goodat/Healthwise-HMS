@@ -8,9 +8,11 @@ const ProgramsForm = () => {
         program_name: '',
         program_description: '',
         target_audience: '',
-        location: '',
+        slogan: '',
         program_type: '', 
         contact_email: '',
+        program_manager: '',
+
     });
 
     const handleInputChange = (e) => {
@@ -33,8 +35,9 @@ const ProgramsForm = () => {
             }
             return res.json();
         })
-        .then(data => {
+        .then((data) => {
             alert('Program created successfully!');
+            setData(data)
             navigate('/program-dashboard');
         })
         .catch(err => console.log(err));
@@ -99,10 +102,26 @@ const ProgramsForm = () => {
 
                     {/* Slogan */}
                     <label htmlFor='slogan' className='flex flex-col w-full'>
-                        <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Contact Email</span>
+                        <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Go by slogan</span>
                         <div className='bg-zinc-800 p-2.5 text-[11px] flex items-center rounded-sm'>
                             <FaCloudUploadAlt className='text-gray-400' size={15} />
                             <input type='text' name='slogan' value={data.slogan} onChange={handleInputChange} className='ml-2 outline-none bg-transparent text-white w-full' placeholder='Slogan' />
+                        </div>
+                    </label>
+                     {/* program manager */}
+                     <label htmlFor='program manager' className='flex flex-col w-full'>
+                        <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Program manager</span>
+                        <div className='bg-zinc-800 p-2.5 text-[11px] flex items-center rounded-sm'>
+                            <FaCloudUploadAlt className='text-gray-400' size={15} />
+                            <input type='text' name='program_manager' value={data.program_manager} onChange={handleInputChange} className='ml-2 outline-none bg-transparent text-white w-full' placeholder='program manager name eg. John Doe' />
+                        </div>
+                    </label>
+                     {/* program type */}
+                     <label htmlFor='program type' className='flex flex-col w-full'>
+                        <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Program type</span>
+                        <div className='bg-zinc-800 p-2.5 text-[11px] flex items-center rounded-sm'>
+                            <FaCloudUploadAlt className='text-gray-400' size={15} />
+                            <input type='text' name='program_type' value={data.program_type} onChange={handleInputChange} className='ml-2 outline-none bg-transparent text-white w-full' placeholder='eg. Online, In-person' />
                         </div>
                     </label>
 
