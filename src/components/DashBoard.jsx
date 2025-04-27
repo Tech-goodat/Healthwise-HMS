@@ -5,10 +5,9 @@ import { GoPersonFill } from "react-icons/go";
 import { MdStickyNote2 } from "react-icons/md";
 import { CiCirclePlus, CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from 'react-router-dom';
-
+import { IoIosClose } from "react-icons/io";
 
 // Function to get initials
-
 const getInitials = (username) => {
     if (!username) return "";
     const names = username.split(" ");
@@ -20,17 +19,17 @@ const DashBoard = () => {
     const [data, setData] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const [selectedClient, setSelectedClient] = useState(null); // State for selected client
     const navigate = useNavigate();
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
-    
         if (!token) {
             navigate('/');  // 👈 Redirect to login if no token
             return; // Stop further execution
         }
-    }
-    )
+    }, [navigate]);
+
     useEffect(() => {
         fetch('https://healthwise-5j1x.onrender.com/clients')
             .then((response) => response.json())
@@ -52,16 +51,33 @@ const DashBoard = () => {
 
         fetch(`https://healthwise-5j1x.onrender.com/client_search/${term}`)
             .then((response) => response.json())
-            .then((data) =>{
-                 setSearchResults(data)
-                
-                })
+            .then((data) => setSearchResults(data))
             .catch((error) => console.log(error));
     };
 
     // function to handle clicking on a search result
     const handleUserClick = (id) => {
-        navigate(`/usermodal/${id}`)
+        navigate(`/usermodal/${id}`);
+    };
+
+    // Function to handle client removal
+    const handleRemoveClient = (id) => {
+        fetch(`https://healthwise-5j1x.onrender.com/client_delete/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+            }
+        })
+        .then((response) => {
+            if (response.ok) {
+                setData(data.filter(client => client.id !== id)); // Update the local state to remove the client
+                setSelectedClient(null); // Clear selected client
+                alert('Client removed successfully');
+            } else {
+                alert('Failed to remove client');
+            }
+        })
+        .catch((error) => console.log('Error:', error));
     };
 
     return (
@@ -157,7 +173,8 @@ const DashBoard = () => {
                                 <th className="px-4 py-2 text-[9px]">Phone number</th>
                                 <th className="px-4 py-2 text-[9px]">Gender</th>
                                 <th className="px-4 py-2 text-[9px]">Age</th>
-                                <th className="px-4 py-2 text-[9px] rounded-tr-lg">Created at</th>
+                                <th className="px-4 py-2 text-[9px]">Created at</th>
+                                <th className="px-4 py-2 text-[9px] rounded-tr-lg">Actions</th> {/* Add this column */}
                             </tr>
                         </thead>
                         <tbody>
@@ -167,6 +184,7 @@ const DashBoard = () => {
                                     className={`border-b border-gray-700 ${
                                         index === data.length - 1 ? 'rounded-b-lg' : ''
                                     }`}
+                                    onClick={() => setSelectedClient(client)}
                                 >
                                     <td className="px-4 py-2 text-[10px] flex items-center gap-2">
                                         <div className="w-7 h-7 flex items-center justify-center rounded-full bg-lime-300 text-black text-[11px] font-bold">
@@ -175,10 +193,18 @@ const DashBoard = () => {
                                         {client.username}
                                     </td>
                                     <td className="px-4 py-2 text-[10px]">{client.email}</td>
-                                    <td className="px-4 py-2 text-[10px]">{client.phone_number}</td>
+                                    <td className="px-4 py-2 text-[10px]">{client.phone}</td>
                                     <td className="px-4 py-2 text-[10px]">{client.gender}</td>
                                     <td className="px-4 py-2 text-[10px]">{client.age}</td>
                                     <td className="px-4 py-2 text-[10px]">{client.created_at}</td>
+                                    <td className="px-4 py-2 text-[10px]">
+                                        <button
+                                            onClick={() => handleRemoveClient(client.id)}
+                                            className="text-white cursor pointer"
+                                        >
+                                            <IoIosClose size={20}/>
+                                        </button>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
