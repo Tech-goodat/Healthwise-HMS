@@ -34,7 +34,7 @@ const UserModal = () => {
       <p className='text-white flex w-full text-[11px] '>{client.family_medical_history}</p>
    
       </div>
-      <button className='lg:w-[500px] w-[300px] cursor-pointer mb-6 mt-2 p-1.5 rounded-sm text-[12px] bg-emerald-400'>Enrol {client.username} to a program</button>
+      <button className='lg:w-[500px] w-[300px] cursor-pointer mb-6 lg:mb-[40px] mt-2 p-1.5 rounded-sm text-[12px] bg-emerald-400'>Enrol {client.username} to a program</button>
       </div>
       {/* Show other client fields */}
       </div>
