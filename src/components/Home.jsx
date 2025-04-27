@@ -91,14 +91,7 @@ const Home = () => {
               </div>
             </label>
 
-            {/* Username */}
-            <label htmlFor='username' className='flex flex-col w-full'>
-              <span className='mb-2 text-[12px] lg:text-[9px] text-gray-400'>Enter your username</span>
-              <div className='bg-zinc-800 p-2.5 text-[11px] flex items-center rounded-sm'>
-                <FaUserCheck className='text-gray-400' size={15} />
-                <input type='text' name='username' /*value={data.username} onChange={handleInputChange}*/ className='ml-2 outline-none bg-transparent text-white w-full' placeholder='eg Felix Kiprotich' />
-              </div>
-            </label>
+            
 
             {/* Password */}
             <label htmlFor='password' className='flex flex-col w-full'>
