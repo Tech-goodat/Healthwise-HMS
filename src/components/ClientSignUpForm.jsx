@@ -46,7 +46,12 @@ const ClientSignUpForm = () => {
                     },
                     body: JSON.stringify(data)
                 })
-                .then(res=>res.json())
+                .then(res=>{
+                  if(!res.ok){
+                    throw new Error('Missing or invalid details!')
+                  }
+                  return  res.json()
+                })
                 .then(data=>{
                     console.log(data)
                     alert('Account created successfully !')
