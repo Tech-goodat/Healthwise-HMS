@@ -39,8 +39,14 @@ const Home = () => {
             },
             body: JSON.stringify(data)
         })
-        .then(res=>res.json())
+        .then(res=>{
+          if (!res.ok){
+            throw new Error('failed to log in, missing credentials!')
+          }
+          return res.json()
+        })
         .then(data=>{
+          
             console.log(data)
             alert('Sign in Successfull')
             sessionStorage.setItem('username', data.username)
