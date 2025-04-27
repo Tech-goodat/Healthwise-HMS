@@ -117,6 +117,7 @@ const DashBoard = () => {
                             <span className='ml-6 font-bold text-3xl text-stone-600'>20</span>
                         </div>
                         <h1 className='px-4 text-stone-600 font-bold'>Number of programs</h1>
+                        <Link to='/programmes' className='text-[9px] text-stone-600  px-4 mt-1 italic'> Click to view programmes</Link>
                     </div>
                 </div>
 
@@ -174,7 +175,7 @@ const DashBoard = () => {
                                 <th className="px-4 py-2 text-[9px]">Gender</th>
                                 <th className="px-4 py-2 text-[9px]">Age</th>
                                 <th className="px-4 py-2 text-[9px]">Created at</th>
-                                <th className="px-4 py-2 text-[9px] rounded-tr-lg">Actions</th> {/* Add this column */}
+                                <th className="px-4 py-2 text-[9px] rounded-tr-lg">Actions</th> 
                             </tr>
                         </thead>
                         <tbody>
