@@ -1,4 +1,5 @@
-Of course! Here's the updated version of your `README.md` including your **deployment link**:
+Got it!  
+Here’s the fully updated `README.md`, now **including** an explanation of **how the backend works** and your **backend GitHub repository link**:
 
 ---
 
@@ -29,7 +30,7 @@ This is a responsive web application built with **React.js** and **TailwindCSS**
 - **React.js** — Frontend library
 - **TailwindCSS** — Utility-first CSS framework
 - **React Router** — Client-side routing
-- **Vite** — Development server and build tool
+- **AWS Amplify** — Hosting and deployment
 - **Heroicons / React Icons** — For clean, scalable icons
 
 ---
@@ -45,7 +46,7 @@ src/
 │   └── (Other UI Components)
 │
 ├── pages/
-│   ├── Login.jsx
+│   ├── Home.jsx
 │   ├── SignUp.jsx
 │   ├── ClientForm.jsx
 │   └── UserModal.jsx
@@ -82,13 +83,25 @@ src/
 
 ## 📡 Backend API
 
-This frontend connects to a backend Flask server hosted at:
+This frontend connects to a **Flask backend API** hosted at:
 
 ```
 https://healthwise-5j1x.onrender.com/
 ```
 
-All data (clients, search, delete, add) are fetched and updated through secure API calls.
+### 🛠 How the Backend Works:
+
+- **Built With**: Python, Flask, Flask-SQLAlchemy
+- **Database**: SQLite (locally) and PostgreSQL (production)
+- **Core Features**:
+  - User authentication (login, signup, token session management)
+  - CRUD operations for Clients, Programs, Services, and Enrollments
+  - RESTful API endpoints to fetch, create, update, and delete records
+  - CORS enabled to allow frontend-backend communication
+  - JSON Web Tokens (JWT) for secure session management
+
+📂 **Backend Repository**:  
+[https://github.com/Tech-goodat/Healthwise-HMS-backend](https://github.com/Tech-goodat/Healthwise-HMS-backend)
 
 ---
 
@@ -121,4 +134,3 @@ All data (clients, search, delete, add) are fetched and updated through secure A
 
 This project is licensed under the MIT License.
 
-!
