@@ -4,7 +4,7 @@ import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import { Link, useNavigate } from 'react-router-dom';
-import { FaGithub } from "react-icons/fa";
+
 
 
 
@@ -127,8 +127,6 @@ const Home = () => {
             autoplay
             // style={{ width: "100%", maxWidth: "500px", height: "auto", objectFit: "cover" }}
           />
-          <span><FaGithub size={20}/> Frontend repo</span>
-          <span><FaGithub size={20}/> Backend repo</span>
            <p className='text-[9px] lg:hidden flex text-zinc-900'>
               &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
             </p>
