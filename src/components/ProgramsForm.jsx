@@ -115,7 +115,7 @@ const ProgramsForm = () => {
                 </form>
             </div>
             <div className='mt-2 lg:mt-0 lg:h-full'>
-                <img src='/Illustration.jpg' alt='background' className='w-full h-full object-cover' />
+                <img src='/doctor.jpg' alt='background' className='w-full h-full object-cover' />
             </div>
         </div>
     );
