@@ -38,7 +38,7 @@ const UserModal = () => {
       </div>
       {/* Show other client fields */}
       </div>
-      <div className='hidden lg:flex flex-col rounded-lg  lg:mt-0   h-full justify-center items-center '>
+      <div className='hidden lg:flex lg:flex-col lg:rounded-lg  lg:mt-0   lg:h-full lg:justify-center lg:items-center '>
         <img src='/sidePic.png' alt='sidePic' className='w-full lg:h-screen object-cover' />
       </div>
     </div>
