@@ -62,10 +62,12 @@ const ClientSignUpForm = () => {
   return (
    <div className='flex flex-col lg:grid lg:grid-cols-3 items-center justify-center h-full '>
          <div className='col-span-2 flex w-full px-4 flex-col items-center lg:items-start lg:ml-[100px] h-full'>
+          <Link to='/dashboard'>
          <div className='flex justify-center lg:justify-start w-full mt-[40px] items-center'>
                <img src='/betterlogo.png' alt='logo' className='w-[30px] h-auto' />
                <span className='text-[13px] ml-2 font-bold'>Health<span className='text-gray-400'>Wise</span></span>
              </div>
+             </Link>
              <div className='flex w-full flex-col gap-2 items-center mt-[30px] lg:items-start'>
                <h1 className='text-[23px] lg:text-[23px] font-bold text-center lg:text-left w-full'>Hey <span className='text-gray-400'>{user}</span> 👋</h1>
                <p className='text-[13px] lg:text-[10px] text-gray-400 text-center lg:text-left w-full'>

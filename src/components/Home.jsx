@@ -43,6 +43,8 @@ const Home = () => {
             return;
         }
 
+        
+
         setErrors({});
 
         fetch('https://healthwise-5j1x.onrender.com/doc_login', {

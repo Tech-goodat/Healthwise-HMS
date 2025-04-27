@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 const NavBar = () => {
@@ -19,12 +20,14 @@ const NavBar = () => {
     return (
         <div className="flex p-2 w-full items-center justify-between bg-black relative">
             {/* Logo and Brand */}
+            <Link to="/dashboard">
             <div className="flex gap-3 mr-4 items-center">
                 <img src="/betterlogo.png" alt="logo" className="w-[30px] ml-4 h-auto" />
                 <p className="text-[13px] text-white">
                     Health<span className="text-gray-400">Wise</span>
                 </p>
             </div>
+            </Link>
 
             {/* User Profile Section */}
             <div className="flex flex-col items-end relative mr-4">
