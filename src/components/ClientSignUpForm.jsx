@@ -199,7 +199,7 @@ const ClientSignUpForm = () => {
                          {/* Button */}
                          <div className='w-full mt-4'>
                            <button className='bg-emerald-400 mb-5 cursor-pointer font-bold text-[11px] p-2.5 w-full rounded-sm'>
-                             Complete user registration........
+                             Complete user registration
                            </button>
                            
                          </div>

@@ -239,7 +239,7 @@ const SignUp = () => {
                     {/* Button */}
                     <div className='w-full mt-4'>
                         <button className='bg-emerald-400 cursor-pointer font-bold text-[11px] p-2.5 w-full rounded-sm'>
-                            Create account........
+                            Create account
                         </button>
                         <p className='flex text-[11px] text-gray-400 mt-4 mb-4 justify-center lg:justify-start'>
                             Already have an account ? <Link className='ml-2 cursor-pointer' to='/'>Sign in !</Link>

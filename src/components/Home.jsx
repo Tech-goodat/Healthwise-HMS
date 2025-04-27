@@ -129,7 +129,7 @@ const Home = () => {
                         {/* Button */}
                         <div className='w-full mt-4'>
                             <button className='bg-emerald-400 cursor-pointer font-bold text-[11px] p-2.5 w-full rounded-sm'>
-                                Sign in ......
+                                Sign in
                             </button>
                             <p className='flex text-[11px] text-gray-400 mt-4 justify-center lg:justify-start'>
                                 Don't have an account? <Link className='ml-2 cursor-pointer' to='/sign up'>Create account</Link>
