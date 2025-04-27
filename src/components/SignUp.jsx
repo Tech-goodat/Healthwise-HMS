@@ -38,7 +38,7 @@ const SignUp = () => {
             })
             .then(res=>{
               if (!res.ok){
-                throw new Error('failed to log in, missing credentials!')
+                throw new Error(alert('missing or invalid credentials'));
               }
               return res.json()
             })
