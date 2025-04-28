@@ -5,8 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 const ProgramsForm = () => {
     const navigate = useNavigate();
     const [data, setData] = useState({
-        program_name: '',
-        program_description: '',
+        name: '',
+        description: '',
         target_audience: '',
         slogan: '',
         program_type: '', 
@@ -38,7 +38,7 @@ const ProgramsForm = () => {
         .then((data) => {
             alert('Program created successfully!');
             setData(data)
-            navigate('/program-dashboard');
+            navigate('/dashboard');
         })
         .catch(err => console.log(err));
     };
